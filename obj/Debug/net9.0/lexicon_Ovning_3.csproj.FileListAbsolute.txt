@@ -1,5 +1,15 @@
+/Users/eliserochaix/Lexicon VT2025 C#/lexicon_Ovning_3/bin/Debug/net9.0/lexicon_Ovning_3
+/Users/eliserochaix/Lexicon VT2025 C#/lexicon_Ovning_3/bin/Debug/net9.0/lexicon_Ovning_3.deps.json
+/Users/eliserochaix/Lexicon VT2025 C#/lexicon_Ovning_3/bin/Debug/net9.0/lexicon_Ovning_3.runtimeconfig.json
+/Users/eliserochaix/Lexicon VT2025 C#/lexicon_Ovning_3/bin/Debug/net9.0/lexicon_Ovning_3.dll
+/Users/eliserochaix/Lexicon VT2025 C#/lexicon_Ovning_3/bin/Debug/net9.0/lexicon_Ovning_3.pdb
 /Users/eliserochaix/Lexicon VT2025 C#/lexicon_Ovning_3/obj/Debug/net9.0/lexicon_Ovning_3.GeneratedMSBuildEditorConfig.editorconfig
 /Users/eliserochaix/Lexicon VT2025 C#/lexicon_Ovning_3/obj/Debug/net9.0/lexicon_Ovning_3.AssemblyInfoInputs.cache
 /Users/eliserochaix/Lexicon VT2025 C#/lexicon_Ovning_3/obj/Debug/net9.0/lexicon_Ovning_3.AssemblyInfo.cs
 /Users/eliserochaix/Lexicon VT2025 C#/lexicon_Ovning_3/obj/Debug/net9.0/lexicon_Ovning_3.csproj.CoreCompileInputs.cache
 /Users/eliserochaix/Lexicon VT2025 C#/lexicon_Ovning_3/obj/Debug/net9.0/lexicon_Ovning_3.sourcelink.json
+/Users/eliserochaix/Lexicon VT2025 C#/lexicon_Ovning_3/obj/Debug/net9.0/lexicon_Ovning_3.dll
+/Users/eliserochaix/Lexicon VT2025 C#/lexicon_Ovning_3/obj/Debug/net9.0/refint/lexicon_Ovning_3.dll
+/Users/eliserochaix/Lexicon VT2025 C#/lexicon_Ovning_3/obj/Debug/net9.0/lexicon_Ovning_3.pdb
+/Users/eliserochaix/Lexicon VT2025 C#/lexicon_Ovning_3/obj/Debug/net9.0/lexicon_Ovning_3.genruntimeconfig.cache
+/Users/eliserochaix/Lexicon VT2025 C#/lexicon_Ovning_3/obj/Debug/net9.0/ref/lexicon_Ovning_3.dll

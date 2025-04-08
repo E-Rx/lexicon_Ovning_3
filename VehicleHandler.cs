@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace lexicon_Ovning_3;
 
@@ -36,7 +37,7 @@ public class VehicleHandler
         vehicle.Brand = newBrand;
     }
   // Display List of Vehicles
-  public void DisplayVehicles()
+  public void ListVehicles()
     {
     Console.WriteLine("List of Vehicles:");
     foreach (Vehicle vehicle in vehicles)

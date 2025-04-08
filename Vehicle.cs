@@ -1,13 +1,14 @@
 using System;
+using System.Collections.Generic;
 
 namespace lexicon_Ovning_3;
 
-public abstract class Vehicle
+public class Vehicle
 {
-  private string brand;
-  private string model;
-  private int year;
-  private double weight;
+  private string brand = string.Empty; // Default value
+  private string model = string.Empty;
+  private int year = 0;
+  private double weight = 0.0;
 
   public string Brand // Validation: Brand must be between 2 and 20 characters
   {
@@ -38,9 +39,10 @@ public abstract class Vehicle
   {
     get { return year; }
     set {
-    if (year < 1886 || year > DateTime.Now.Year)
+    int currentYear = DateTime.Now.Year;
+    if (value < 1886 || value > currentYear)
       {
-        throw new ArgumentException("Year must be between 1886 and the current year.");
+      throw new ArgumentException("Year must be between 1886 and the current year.");
       }
       year = value;
     }
@@ -68,6 +70,6 @@ public abstract class Vehicle
 
   public string GetInfo()
   {
-    return ($"{Brand} {Model}, Year: {Year}, Weight: {Weight} kg");
+    return $"{Brand} {Model}, Year: {Year}, Weight: {Weight} kg";
   }
 }
