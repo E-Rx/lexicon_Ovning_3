@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 
 namespace lexicon_Ovning_3;
@@ -12,7 +13,7 @@ static class Program
 
     try
     {
-      // Create a new Car object
+      // Part 1: Create a new Car object
 
     Vehicle car = new Vehicle("Lotus", "Elise", 2020, 996);
     handler.AddVehicle(car);
@@ -35,6 +36,7 @@ static class Program
 
     // Change the weight of the first vehicle
     handler.ChangeVehicleWeight(car, 1300);
+    handler.ChangeVehicleWeight(car2, 2000);
     Console.WriteLine("\nAfter changing the weight of the first car:");
     handler.ListVehicles();
 
@@ -50,5 +52,24 @@ static class Program
         Console.WriteLine($"Unexpected error: {ex.Message}");
     }
 
+
+
+
+    // Part 2: System Error
+    Console.WriteLine("\n--- System Errors Demonstration ---");
+
+    // Create a list of system errors (Part 2.3)
+    List<SystemError> errors = new List<SystemError>
+      {
+        new EngineFailureError(),
+        new TransmissionError(),
+        new BrakeFailureError(),
+      };
+
+    // Display error messages (polymorphism)
+    foreach (var error in errors)
+    {
+        Console.WriteLine(error.ErrorMessage());
+    }
   }
 }

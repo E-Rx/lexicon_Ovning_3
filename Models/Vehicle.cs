@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace lexicon_Ovning_3;
 
-public class Vehicle
+public abstract class Vehicle
 {
   private string brand = string.Empty; // Default value
   private string model = string.Empty;
