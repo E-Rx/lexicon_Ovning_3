@@ -2,7 +2,7 @@ using System;
 
 namespace lexicon_Ovning_3;
 
-public class Vehicle
+public abstract class Vehicle
 {
   private string brand;
   private string model;
@@ -38,7 +38,7 @@ public class Vehicle
   {
     get { return year; }
     set {
-    if year < 1886 || year > DateTime.Now.Year)
+    if (year < 1886 || year > DateTime.Now.Year)
       {
         throw new ArgumentException("Year must be between 1886 and the current year.");
       }
@@ -55,5 +55,19 @@ public class Vehicle
       }
       weight = value;
     }
+  }
+
+  // Constructor
+  public Vehicle(string brand, string model, int year, double weight)
+  {
+    Brand = brand;
+    Model = model;
+    Year = year;
+    Weight = weight;
+  }
+
+  public string GetInfo()
+  {
+    return ($"{Brand} {Model}, Year: {Year}, Weight: {Weight} kg");
   }
 }

@@ -1,0 +1,5 @@
+/Users/eliserochaix/Lexicon VT2025 C#/lexicon_Ovning_3/obj/Debug/net9.0/lexicon_Ovning_3.GeneratedMSBuildEditorConfig.editorconfig
+/Users/eliserochaix/Lexicon VT2025 C#/lexicon_Ovning_3/obj/Debug/net9.0/lexicon_Ovning_3.AssemblyInfoInputs.cache
+/Users/eliserochaix/Lexicon VT2025 C#/lexicon_Ovning_3/obj/Debug/net9.0/lexicon_Ovning_3.AssemblyInfo.cs
+/Users/eliserochaix/Lexicon VT2025 C#/lexicon_Ovning_3/obj/Debug/net9.0/lexicon_Ovning_3.csproj.CoreCompileInputs.cache
+/Users/eliserochaix/Lexicon VT2025 C#/lexicon_Ovning_3/obj/Debug/net9.0/lexicon_Ovning_3.sourcelink.json
