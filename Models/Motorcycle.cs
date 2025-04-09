@@ -14,7 +14,7 @@ public class Motorcycle : Vehicle
 
   public override void StartEngine()
   {
-    Console.WriteLine($"The {Brand} {Model}'s engine is starting...");
+    Console.WriteLine($"The {Brand} {Model} motorcycle starts with a powerful growl.");
   }
 
   public override string Stats()

@@ -39,10 +39,21 @@ public class VehicleHandler
   // Display List of Vehicles
   public void ListOfVehicles()
     {
-    Console.WriteLine("List of Vehicles:");
-    foreach (Vehicle vehicle in vehicles)
-    {
-      Console.WriteLine(vehicle.GetInfo());
+      foreach (Vehicle vehicle in vehicles)
+      {
+          Console.WriteLine(vehicle.Stats());
+      }
     }
+
+    public List<Vehicle> GetVehicles() // Method to get the list of vehicles
+    {
+      return vehicles;
+    }
+
+    // Method to find a vehicle by brand and model
+    public Vehicle FindVehicleByBrandAndModel(string brand, string model)
+    {
+        return vehicles.Find(v => v.Brand == brand && v.Model == model)
+        ?? throw new InvalidOperationException("Vehicle not found.");
     }
 }

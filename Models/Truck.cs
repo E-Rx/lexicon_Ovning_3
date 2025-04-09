@@ -12,10 +12,10 @@ public class Truck : Vehicle, ICleanable
    CargoCapacity = cargoCapacity;
   }
 
-  
+
  public override void StartEngine()
  {
-  Console.WriteLine($"The {Brand} {Model}'s engine is starting...");
+  Console.WriteLine($"The {Brand} {Model} truck starts with a heavy diesel rumble.");
  }
 
  public override string Stats()

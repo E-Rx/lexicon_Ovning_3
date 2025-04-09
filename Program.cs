@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Security.Cryptography;
-using lexicon_Ovning_3.Models;
+﻿using lexicon_Ovning_3.Models;
 
 
 
@@ -32,10 +28,15 @@ static class Program
       handler.ListOfVehicles();
 
       // Change the weight of the first vehicle
-      handler.ChangeVehicleWeight([0], 1300);
-      handler.ChangeVehicleWeight([1], 2000);
-      Console.WriteLine("\nAfter changing the weight of the first car:");
-      handler.ListOfVehicles();
+      Vehicle carToModify = handler.FindVehicleByBrandAndModel("Lotus", "Elise");
+        {
+            handler.ChangeVehicleWeight(carToModify, 1300);
+            Console.WriteLine("\nAfter changing the car's weight:");
+            handler.ListOfVehicles();
+        }
+
+      DemoErrorHandling();
+      DemoPolymorphism(handler);
 
     }
      catch (ArgumentException ex)
@@ -48,25 +49,42 @@ static class Program
         // Handle other exceptions
         Console.WriteLine($"Unexpected error: {ex.Message}");
     }
+  }
 
 
-
-
-    // Part 2: System Error
-    Console.WriteLine("\n--- System Errors Demonstration ---");
-
-    // Create a list of system errors (Part 2.3)
-    List<SystemError> errors = new List<SystemError>
+  private static void DemoErrorHandling()
+  {
+      Console.WriteLine("\n--- System Errors ---");
+      List<SystemError> errors = new List<SystemError>
       {
-        new EngineFailureError(),
-        new TransmissionError(),
-        new BrakeFailureError(),
+          new EngineFailureError(),
+          new BrakeFailureError(),
+          new TransmissionError()
       };
 
-    // Display error messages (polymorphism)
-    foreach (var error in errors)
+      foreach (var error in errors)
+      {
+          Console.WriteLine(error.ErrorMessage());
+      }
+  }
+
+  private static void DemoPolymorphism(VehicleHandler handler)
+  {
+      // Part 4: polymorphism
+
+    Console.WriteLine("\n--- Starting Engines and Vehicle Stats ---");
+    List<Vehicle> vehicles = handler.GetVehicles();
+
+    foreach (var vehicle in vehicles)
     {
-        Console.WriteLine(error.ErrorMessage());
+        Console.WriteLine(vehicle.Stats());
+        vehicle.StartEngine();
+
+        if (vehicle is ICleanable cleanable)
+        {
+            cleanable.Clean();
+        }
+        Console.WriteLine();
     }
   }
 }

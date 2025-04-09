@@ -14,7 +14,7 @@ public class ElectricScooter : Vehicle
 
   public override void StartEngine()
   {
-    Console.WriteLine($"The {Brand} {Model}'s engine is starting...");
+    Console.WriteLine($"The {Brand} {Model} electric scooter turns on silently.");
   }
 
   public override string Stats()

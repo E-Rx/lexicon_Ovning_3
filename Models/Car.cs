@@ -14,7 +14,7 @@ public class Car : Vehicle, ICleanable
   }
    public override void StartEngine()
   {
-    Console.WriteLine($"The {Brand} {Model}'s engine  is starting...");
+    Console.WriteLine($"The {Brand} {Model} car starts with a powerful roar.");
   }
 
   public override string Stats()

@@ -60,7 +60,7 @@ public abstract class Vehicle
   }
 
   // Constructor
-  public Vehicle(string brand, string model, int year, double weight, )
+  public Vehicle(string brand, string model, int year, double weight)
   {
     Brand = brand;
     Model = model;
@@ -71,6 +71,6 @@ public abstract class Vehicle
 
   // Abstract method to be implemented by derived classes
   public abstract void StartEngine();
-  public string Stats();
+  public abstract string Stats();
 
 }
