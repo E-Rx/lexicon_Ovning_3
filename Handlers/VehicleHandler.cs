@@ -1,48 +1,54 @@
-namespace lexicon_Ovning_3;
+using System;
+using System.Collections.Generic;
 
-public class VehicleHandler
+
+namespace lexicon_Ovning_3.Handlers
 {
-  private List<Vehicle> vehicles = new List<Vehicle>();
-
-  // Method to add a vehicle
-  public void AddVehicle(Vehicle vehicle)
+  public class VehicleHandler
   {
-    vehicles.Add(vehicle);
-  }
+    private List<Vehicle> vehicles = new List<Vehicle>();
 
- // Method to change a vehicle's properties
-  public static void ChangeVehicleWeight(Vehicle vehicle, double newWeight)
+    // Add a vehicle to the list
+    public void AddVehicle(Vehicle vehicle)
     {
-        vehicle.Weight = newWeight;
+      vehicles.Add(vehicle);
     }
 
-    // Method to change a vehicle's year
-  public static void ChangeVehicleYear(Vehicle vehicle, int newYear)
+    // Change vehicle's properties
+    public static void ChangeVehicleWeight(Vehicle vehicle, double newWeight)
     {
-        vehicle.Year = newYear;
+      vehicle.Weight = newWeight;
+    }
+    public static void ChangeVehicleYear(Vehicle vehicle, int newYear)
+    {
+      vehicle.Year = newYear;
+    }
+    public static void ChangeVehicleModel(Vehicle vehicle, string newModel)
+    {
+      vehicle.Model = newModel;
+    }
+    public static void ChangeVehicleBrand(Vehicle vehicle, string newBrand)
+    {
+      vehicle.Brand = newBrand;
     }
 
-    // Method to change a vehicle's model
-  public static void ChangeVehicleModel(Vehicle vehicle, string newModel)
+    // Display the list of vehicles
+    public void ListOfVehicles()
     {
-        vehicle.Model = newModel;
-    }
+      if (vehicles.Count == 0)
+      {
+        Console.WriteLine("No vehicles available.");
+        return;
+      }
 
-    // Method to change a vehicle's brand
-  public static void ChangeVehicleBrand(Vehicle vehicle, string newBrand)
-    {
-        vehicle.Brand = newBrand;
-    }
-  // Display List of Vehicles
-  public void ListOfVehicles()
-    {
       foreach (Vehicle vehicle in vehicles)
       {
-          Console.WriteLine(vehicle.Stats());
+        Console.WriteLine(vehicle.Stats());
       }
     }
 
-    public List<Vehicle> GetVehicles() // Method to get the list of vehicles
+    // Method to get the list of vehicles
+    public List<Vehicle> GetVehicles()
     {
       return vehicles;
     }
@@ -50,7 +56,8 @@ public class VehicleHandler
     // Method to find a vehicle by brand and model
     public Vehicle FindVehicleByBrandAndModel(string brand, string model)
     {
-        return vehicles.Find(v => v.Brand == brand && v.Model == model)
-        ?? throw new InvalidOperationException("Vehicle not found.");
+      return vehicles.Find(v => v.Brand == brand && v.Model == model)
+      ?? throw new InvalidOperationException("Vehicle not found.");
     }
+  }
 }

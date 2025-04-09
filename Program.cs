@@ -1,58 +1,111 @@
 ﻿using System;
-using lexicon_Ovning_3.Errors;
+using lexicon_Ovning_3.ErrorSystem;
+using lexicon_Ovning_3.Handlers;
+using lexicon_Ovning_3.Seeds;
 
-
-namespace lexicon_Ovning_3.Vehicles.Handlers;
-
-
-
-static class Program
+namespace lexicon_Ovning_3.Vehicles.Handlers
 {
-  static void Main(string[] args)
+  static class Program
   {
-    VehicleHandler handler = new VehicleHandler();
-
-    try
+    static void Main(string[] args)
     {
-      Console.WriteLine("--- Vehicle Creation and Management ---");
-
-      handler.AddVehicle(new Car("Lotus", "Elise", 2020, 996, "Petrol" ));
-      handler.AddVehicle(new Car("Renault", "Clio", 2021, 1400, "Petrol"));
-
-      handler.AddVehicle(new Truck("Ford", "F-150", 2018, 2500, 1000));
-
-      handler.AddVehicle(new Motorcycle("Harley-Davidson", "Street 750", 2019, 200, false));
-      handler.AddVehicle(new Motorcycle("Honda", "CBR500R", 2022, 190, true));
-
-      handler.AddVehicle(new ElectricScooter("Xiaomi", "M365", 2021, 12.5, 25));
-
-    // Display the list of vehicles
-      handler.ListOfVehicles();
-
-      // Change the weight of one of thevehicle
-      Vehicle carToModify = handler.FindVehicleByBrandAndModel("Lotus", "Elise");
+        try
         {
-          VehicleHandler.ChangeVehicleWeight(carToModify, 1300);
-          Console.WriteLine("\nAfter changing the car's weight:");
-          handler.ListOfVehicles();
-        }
+          VehicleHandler handler = new VehicleHandler();
+          VehicleInitializer.CreateInitialVehicles(handler);
 
-      ErrorDemo.DemoErrorHandling();
-      DemoPolymorphism(handler);
+          var updater = new UpdateVehicle(handler);
+          var adder = new AddVehicle(handler);
 
-    }
-     catch (ArgumentException ex)
-    {
-        // Handle validation exceptions
+          bool running = true;
+
+          while (running)
+          {
+            Console.WriteLine("\n=== Vehicle Management System ===");
+            Console.WriteLine("");
+            Console.WriteLine("1. Show all vehicles");
+            Console.WriteLine("2. Add a vehicle");
+            Console.WriteLine("3. Update a vehicle");
+            Console.WriteLine("4. Possible Error messages");
+            Console.WriteLine("5. Demo vehicle actions");
+            Console.WriteLine("0. Exit");
+            Console.Write("Select an option: ");
+
+            string input = Console.ReadLine();
+
+            switch (input)
+            {
+              case "1":
+                  handler.ListOfVehicles();
+                  break;
+              case "2":
+                  adder.AddNewVehicle();
+                  break;
+              case "3":
+                  updater.Run();
+                  break;
+              case "4":
+                  ErrorDemo.DemoErrorHandling();
+                  break;
+              case "5":
+                  DemoVehicleActions(handler);
+                  break;
+              case "0":
+                  running = false;
+                  break;
+              default:
+                  Console.WriteLine("Invalid option.");
+                  break;
+            }
+          }
+
+        Console.WriteLine("MERCI ! Goodbye!");
+      }
+      catch (ArgumentException ex)
+      {
         Console.WriteLine($"Validation error: {ex.Message}");
-    }
-    catch (Exception ex)
-    {
-        // Handle other exceptions
+      }
+      catch (Exception ex)
+      {
         Console.WriteLine($"Unexpected error: {ex.Message}");
+      }
+    }
+
+    // Part 4: polymorphism - this method demonstrates Vehicle actions
+    public static void DemoVehicleActions(VehicleHandler handler)
+    {
+      Console.WriteLine("\n--- Demo Vehicle Actions ---");
+      Console.WriteLine("");
+      foreach (var vehicle in handler.GetVehicles())
+      {
+        Console.WriteLine(vehicle.Stats());
+        vehicle.StartEngine();
+        if (vehicle is ICleanable cleanable)
+        {
+            cleanable.Clean();
+        }
+        Console.WriteLine();
+      }
+    }
+
+    public class ErrorDemo // This class is used to showcase the errors
+    {
+      public static void DemoErrorHandling() //
+      {
+        Console.WriteLine("\n--- System Errors ---");
+        Console.WriteLine("");
+        List<SystemError> errors = new List<SystemError>
+        {
+          new EngineFailureError(),
+          new BrakeFailureError(),
+          new TransmissionError()
+        };
+
+        foreach (var error in errors)
+        {
+            Console.WriteLine(error.ErrorMessage());
+        }
+      }
     }
   }
-
-
-  
 }

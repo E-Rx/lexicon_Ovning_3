@@ -37,7 +37,7 @@ public abstract class Vehicle
     get { return year; }
     set {
     int currentYear = DateTime.Now.Year;
-    if (value < 1886 || value > currentYear)
+    if (value < 1886 || value >= currentYear)
       {
       throw new ArgumentException("Year must be between 1886 and the current year.");
       }
@@ -63,7 +63,6 @@ public abstract class Vehicle
     Model = model;
     Year = year;
     Weight = weight;
-
   }
 
   // Abstract method to be implemented by derived classes
