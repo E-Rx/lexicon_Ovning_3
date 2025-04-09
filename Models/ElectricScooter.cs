@@ -1,6 +1,4 @@
-using System;
-
-namespace lexicon_Ovning_3.Models;
+namespace lexicon_Ovning_3.Vehicles;
 
 public class ElectricScooter : Vehicle
 {

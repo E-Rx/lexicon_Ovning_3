@@ -1,5 +1,3 @@
-using System;
-
 namespace lexicon_Ovning_3;
 
 public interface ICleanable

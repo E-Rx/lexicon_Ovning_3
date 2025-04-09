@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace lexicon_Ovning_3;
 
 public abstract class Vehicle

@@ -1,8 +1,9 @@
-﻿using lexicon_Ovning_3.Models;
+﻿using System;
 
 
+namespace lexicon_Ovning_3.Vehicles.Handlers;
 
-namespace lexicon_Ovning_3;
+
 
 static class Program
 {
@@ -27,15 +28,15 @@ static class Program
     // Display the list of vehicles
       handler.ListOfVehicles();
 
-      // Change the weight of the first vehicle
+      // Change the weight of one of thevehicle
       Vehicle carToModify = handler.FindVehicleByBrandAndModel("Lotus", "Elise");
         {
-            handler.ChangeVehicleWeight(carToModify, 1300);
-            Console.WriteLine("\nAfter changing the car's weight:");
-            handler.ListOfVehicles();
+          VehicleHandler.ChangeVehicleWeight(carToModify, 1300);
+          Console.WriteLine("\nAfter changing the car's weight:");
+          handler.ListOfVehicles();
         }
 
-      DemoErrorHandling();
+      ErrorDemo.DemoErrorHandling();
       DemoPolymorphism(handler);
 
     }
@@ -51,22 +52,6 @@ static class Program
     }
   }
 
-
-  private static void DemoErrorHandling()
-  {
-      Console.WriteLine("\n--- System Errors ---");
-      List<SystemError> errors = new List<SystemError>
-      {
-          new EngineFailureError(),
-          new BrakeFailureError(),
-          new TransmissionError()
-      };
-
-      foreach (var error in errors)
-      {
-          Console.WriteLine(error.ErrorMessage());
-      }
-  }
 
   private static void DemoPolymorphism(VehicleHandler handler)
   {

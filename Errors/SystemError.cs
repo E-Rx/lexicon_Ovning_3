@@ -30,3 +30,23 @@ public class TransmissionError : SystemError
     return "Transmission Problem: Repair required!";
   }
 }
+
+
+public class ErrorDemo
+{
+    public static void DemoErrorHandling()
+    {
+        Console.WriteLine("\n--- System Errors ---");
+        List<SystemError> errors = new List<SystemError>
+        {
+            new EngineFailureError(),
+            new BrakeFailureError(),
+            new TransmissionError()
+        };
+
+        foreach (var error in errors)
+        {
+            Console.WriteLine(error.ErrorMessage());
+        }
+    }
+}

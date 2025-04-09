@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace lexicon_Ovning_3;
 
 public class VehicleHandler
@@ -14,25 +11,25 @@ public class VehicleHandler
   }
 
  // Method to change a vehicle's properties
-  public void ChangeVehicleWeight(Vehicle vehicle, double newWeight)
+  public static void ChangeVehicleWeight(Vehicle vehicle, double newWeight)
     {
         vehicle.Weight = newWeight;
     }
 
     // Method to change a vehicle's year
-  public void ChangeVehicleYear(Vehicle vehicle, int newYear)
+  public static void ChangeVehicleYear(Vehicle vehicle, int newYear)
     {
         vehicle.Year = newYear;
     }
 
     // Method to change a vehicle's model
-  public void ChangeVehicleModel(Vehicle vehicle, string newModel)
+  public static void ChangeVehicleModel(Vehicle vehicle, string newModel)
     {
         vehicle.Model = newModel;
     }
 
     // Method to change a vehicle's brand
-  public void ChangeVehicleBrand(Vehicle vehicle, string newBrand)
+  public static void ChangeVehicleBrand(Vehicle vehicle, string newBrand)
     {
         vehicle.Brand = newBrand;
     }

@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-
-namespace lexicon_Ovning_3.Models;
+namespace lexicon_Ovning_3.Vehicles;
 
 public class Car : Vehicle, ICleanable
 {
