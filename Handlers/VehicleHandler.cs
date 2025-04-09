@@ -37,7 +37,7 @@ public class VehicleHandler
         vehicle.Brand = newBrand;
     }
   // Display List of Vehicles
-  public void ListVehicles()
+  public void ListOfVehicles()
     {
     Console.WriteLine("List of Vehicles:");
     foreach (Vehicle vehicle in vehicles)

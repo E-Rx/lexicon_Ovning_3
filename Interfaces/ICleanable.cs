@@ -2,7 +2,7 @@ using System;
 
 namespace lexicon_Ovning_3;
 
-public class ICleanable
+public interface ICleanable
 {
-
+    public void Clean();
 }

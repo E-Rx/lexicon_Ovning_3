@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Security.Cryptography;
+using lexicon_Ovning_3.Models;
+
 
 
 namespace lexicon_Ovning_3;
@@ -13,32 +16,26 @@ static class Program
 
     try
     {
-      // Part 1: Create a new Car object
+      Console.WriteLine("--- Vehicle Creation and Management ---");
 
-    Vehicle car = new Vehicle("Lotus", "Elise", 2020, 996);
-    handler.AddVehicle(car);
-    Vehicle car2 = new Vehicle("Toyota", "Corolla", 2021, 1300);
-    handler.AddVehicle(car2);
-    //handler.AddVehicle(new Car("Renault", "Clio", 2021, 1400));
+      handler.AddVehicle(new Car("Lotus", "Elise", 2020, 996, "Petrol" ));
+      handler.AddVehicle(new Car("Renault", "Clio", 2021, 1400, "Petrol"));
 
-    // Create a new Truck object
-    //handler.AddVehicle(new Truck("Ford", "F-150", 2018, 2500, 1000));
+      handler.AddVehicle(new Truck("Ford", "F-150", 2018, 2500, 1000));
 
-    // Create a new Motorcycle object
-    //handler.AddVehicle(new Motorcycle("Harley-Davidson", "Street 750", 2019, 200, 750));
+      handler.AddVehicle(new Motorcycle("Harley-Davidson", "Street 750", 2019, 200, false));
+      handler.AddVehicle(new Motorcycle("Honda", "CBR500R", 2022, 190, true));
 
-    // Create a new ElectricScooter object
-    //handler.AddVehicle(new ElectricScooter("Xiaomi", "M365", 2021, 12.5, 25));
+      handler.AddVehicle(new ElectricScooter("Xiaomi", "M365", 2021, 12.5, 25));
 
     // Display the list of vehicles
+      handler.ListOfVehicles();
 
-    handler.ListVehicles();
-
-    // Change the weight of the first vehicle
-    handler.ChangeVehicleWeight(car, 1300);
-    handler.ChangeVehicleWeight(car2, 2000);
-    Console.WriteLine("\nAfter changing the weight of the first car:");
-    handler.ListVehicles();
+      // Change the weight of the first vehicle
+      handler.ChangeVehicleWeight([0], 1300);
+      handler.ChangeVehicleWeight([1], 2000);
+      Console.WriteLine("\nAfter changing the weight of the first car:");
+      handler.ListOfVehicles();
 
     }
      catch (ArgumentException ex)
