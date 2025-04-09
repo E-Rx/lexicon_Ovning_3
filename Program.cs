@@ -1,4 +1,5 @@
 ﻿using System;
+using lexicon_Ovning_3.Errors;
 
 
 namespace lexicon_Ovning_3.Vehicles.Handlers;
@@ -53,23 +54,5 @@ static class Program
   }
 
 
-  private static void DemoPolymorphism(VehicleHandler handler)
-  {
-      // Part 4: polymorphism
-
-    Console.WriteLine("\n--- Starting Engines and Vehicle Stats ---");
-    List<Vehicle> vehicles = handler.GetVehicles();
-
-    foreach (var vehicle in vehicles)
-    {
-        Console.WriteLine(vehicle.Stats());
-        vehicle.StartEngine();
-
-        if (vehicle is ICleanable cleanable)
-        {
-            cleanable.Clean();
-        }
-        Console.WriteLine();
-    }
-  }
+  
 }

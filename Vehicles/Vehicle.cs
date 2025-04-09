@@ -12,7 +12,7 @@ public abstract class Vehicle
     get { return brand; }
     set
     {
-      if (value.Length < 2 || value.Length > 20)
+      if (value.Length <= 2 || value.Length >= 20)
       {
         throw new ArgumentException("Brand must be between 2 and 20 characters.");
       }
@@ -24,7 +24,7 @@ public abstract class Vehicle
     get { return model; }
     set
     {
-      if (value.Length < 2 || value.Length > 20)
+      if (value.Length <= 2 || value.Length >= 20)
       {
         throw new ArgumentException("Model must be between 2 and 20 characters.");
       }
