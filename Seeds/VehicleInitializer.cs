@@ -19,7 +19,7 @@ public class VehicleInitializer
     {
       try
       {
-        handler.AddVehicle(new Car("Lotus", "Elise", 2020, 996, "Petrol" ));
+        handler.AddVehicle(new Car("Lotus", "Elise", 2020, 996, "Gasoline" ));
         handler.AddVehicle(new Car("Renault", "Clio", 2021, 1400, "Diesel"));
 
         handler.AddVehicle(new Truck("Volvo", "F-150", 2018, 2500, 1000));

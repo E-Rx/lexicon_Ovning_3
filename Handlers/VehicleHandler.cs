@@ -33,7 +33,7 @@ namespace lexicon_Ovning_3.Handlers
     }
 
     // Display the list of vehicles
-    public void ListOfVehicles()
+    /* public void ListOfVehicles()
     {
       if (vehicles.Count == 0)
       {
@@ -45,7 +45,33 @@ namespace lexicon_Ovning_3.Handlers
       {
         Console.WriteLine(vehicle.Stats());
       }
+    } */
+
+    public void ListOfVehicles()
+{
+    if (vehicles.Count == 0)
+    {
+        Console.WriteLine("No vehicles available.");
+        return;
     }
+
+    // Regrouper par type de classe (Car, Truck, etc.) et trier
+    var groupedVehicles = vehicles
+        .GroupBy(v => v.GetType().Name)
+        .OrderBy(group => group.Key); // Trier les groupes par nom du type
+
+    foreach (var group in groupedVehicles)
+    {
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine($"\n=== {group.Key} ===");
+        Console.ResetColor();
+
+        foreach (var vehicle in group.OrderBy(v => v.Model)) // Trie par modèle
+        {
+            Console.WriteLine(vehicle.Stats());
+        }
+    }
+}
 
     // Method to get the list of vehicles
     public List<Vehicle> GetVehicles()

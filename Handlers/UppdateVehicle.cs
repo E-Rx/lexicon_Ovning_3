@@ -15,8 +15,10 @@ namespace lexicon_Ovning_3.Handlers
 
       public void Run()
       {
+        Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("\n=== Update a Vehicle ===");
         Console.WriteLine("");
+        Console.ResetColor();
         vehicleHandler.ListOfVehicles();
 
         var vehicles = vehicleHandler.GetVehicles();

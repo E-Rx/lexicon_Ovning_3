@@ -7,8 +7,10 @@ public class ErrorDemo
 {
   public static void DemoErrorHandling() //
     {
-      Console.WriteLine("\n--- System Errors ---");
+      Console.ForegroundColor = ConsoleColor.Cyan;
+      Console.WriteLine("\n=== System Errors ===");
       Console.WriteLine("");
+      Console.ResetColor();
       List<SystemError> errors = new List<SystemError>
       {
         new EngineFailureError(),
