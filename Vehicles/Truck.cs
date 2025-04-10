@@ -11,18 +11,18 @@ public class Truck : Vehicle, ICleanable
   }
 
 
- public override void StartEngine()
- {
-  Console.WriteLine($"The {Brand} {Model} truck starts with a heavy diesel rumble.");
- }
+  public override void StartEngine()
+  {
+    Console.WriteLine($"The {Brand} {Model} truck starts with a heavy diesel rumble.");
+  }
 
- public override string Stats()
- {
-  return $"Truck: {Brand} {Model} ({Year}), Weight: {Weight}kg, Cargo Capacity: {CargoCapacity}kg";
- }
+  public override string Stats()
+  {
+    return $"Truck: {Brand} {Model} ({Year}), Weight: {Weight}kg, Cargo Capacity: {CargoCapacity}kg";
+  }
 
- public void Clean()
- {
-  Console.WriteLine($"The {Brand} {Model} truck is washed and cleaned!");
- }
+  public void Clean()
+  {
+    Console.WriteLine($"The {Brand} {Model} truck is washed and cleaned!");
+  }
 }

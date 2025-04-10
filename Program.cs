@@ -54,8 +54,10 @@ namespace lexicon_Ovning_3.Vehicles.Handlers
         switch (input)
         {
           case "1":
-              handler.ListOfVehicles();
-              break;
+            Console.WriteLine("\n=== All Vehicles in the System ===");
+            Console.WriteLine("");
+            handler.ListOfVehicles();
+            break;
           case "2":
               adder.AddNewVehicle();
               break;
@@ -79,6 +81,7 @@ namespace lexicon_Ovning_3.Vehicles.Handlers
 
       Console.WriteLine("MERCI! À BIENTÔT!");
     }
+
 
     // Part 4: polymorphism - this method demonstrates Vehicle actions
     public static void DemoVehicleActions(VehicleHandler handler)
