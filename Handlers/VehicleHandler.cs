@@ -58,6 +58,22 @@ namespace lexicon_Ovning_3.Handlers
     {
       return vehicles.Find(v => v.Brand == brand && v.Model == model)
       ?? throw new InvalidOperationException("Vehicle not found.");
+
+    /* Vehicle foundVehicle = null;
+
+    foreach (Vehicle vehicle in vehicles)
+    {
+      if (vehicle.Brand == brand && vehicle.Model == model)
+      {
+        foundVehicle = vehicle;
+        break;
+      }
+    }
+    if (foundVehicle == null)
+    {
+      throw new InvalidOperationException("Vehicle not found.");
+    }
+    return foundVehicle; */
     }
   }
 }

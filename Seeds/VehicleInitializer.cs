@@ -13,8 +13,9 @@ public class VehicleInitializer
     {
       VehicleInitializer.handler = handler;
     }
-
-  public static void CreateInitialVehicles(VehicleHandler handler) // Method to create initial vehicles
+    
+  // Method to create initial vehicles
+  public static void CreateInitialVehicles(VehicleHandler handler)
     {
       try
       {
