@@ -2,6 +2,7 @@
 using lexicon_Ovning_3.ErrorSystem;
 using lexicon_Ovning_3.Handlers;
 using lexicon_Ovning_3.Seeds;
+using lexicon_Ovning_3.Helpers;
 
 namespace lexicon_Ovning_3.Vehicles.Handlers
 {
@@ -48,7 +49,7 @@ namespace lexicon_Ovning_3.Vehicles.Handlers
         Console.WriteLine("0. Exit");
         Console.Write("Select an option: ");
 
-        string input = Console.ReadLine();
+        string input = (string)InputHelper.GetValidInput("", typeof(string));
 
         switch (input)
         {

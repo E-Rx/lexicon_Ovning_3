@@ -27,16 +27,11 @@ namespace lexicon_Ovning_3.Handlers
             }
 
             Console.Write("\nEnter the brand of the vehicle to update: ");
-            string brand = Console.ReadLine();
+string brand = (string)InputHelper.GetValidInput("", typeof(string));
 
             Console.Write("Enter the model of the vehicle to update: ");
-            string model = Console.ReadLine();
+string model = (string)InputHelper.GetValidInput("", typeof(string));
 
-            if (string.IsNullOrEmpty(brand) || string.IsNullOrEmpty(model))
-            {
-                Console.WriteLine("Brand and model cannot be empty.");
-                return;
-            }
 
             try
             {
@@ -50,7 +45,7 @@ namespace lexicon_Ovning_3.Handlers
                 Console.WriteLine("5. Specific property");
                 Console.Write("Your choice: ");
 
-                string choice = Console.ReadLine();
+                string choice = (string)InputHelper.GetValidInput("", typeof(string));
 
                 switch (choice)
                 {

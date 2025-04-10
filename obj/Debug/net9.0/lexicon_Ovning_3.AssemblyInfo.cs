@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("lexicon_Ovning_3")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a97aef0feb4d04a9fcaa3667fa6869625c9ebca8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d13a56b3ed41b85e397563482efeb5b4d3d7b87a")]
 [assembly: System.Reflection.AssemblyProductAttribute("lexicon_Ovning_3")]
 [assembly: System.Reflection.AssemblyTitleAttribute("lexicon_Ovning_3")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
