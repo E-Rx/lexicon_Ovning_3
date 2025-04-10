@@ -6,14 +6,14 @@ namespace lexicon_Ovning_3.Seeds;
 
 public class VehicleInitializer
 {
-  private static object handler;
+  private readonly VehicleHandler handler;
 
   // constructor
   public VehicleInitializer(VehicleHandler handler)
     {
-      VehicleInitializer.handler = handler;
+      this.handler = handler;
     }
-    
+
   // Method to create initial vehicles
   public static void CreateInitialVehicles(VehicleHandler handler)
     {

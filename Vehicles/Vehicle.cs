@@ -12,7 +12,7 @@ public abstract class Vehicle
     get { return brand; }
     set
     {
-      if (value.Length <= 2 || value.Length >= 20)
+      if (string.IsNullOrEmpty(value) || value.Length <= 2 || value.Length > 20)
       {
         throw new ArgumentException("Brand must be between 2 and 20 characters.");
       }
@@ -24,7 +24,7 @@ public abstract class Vehicle
     get { return model; }
     set
     {
-      if (value.Length <= 2 || value.Length >= 20)
+      if (string.IsNullOrEmpty(value) || value.Length <= 2 || value.Length > 20)
       {
         throw new ArgumentException("Model must be between 2 and 20 characters.");
       }
@@ -37,7 +37,7 @@ public abstract class Vehicle
     get { return year; }
     set {
     int currentYear = DateTime.Now.Year;
-    if (value < 1886 || value >= currentYear)
+    if (value < 1886 || value > currentYear)
       {
       throw new ArgumentException("Year must be between 1886 and the current year.");
       }
