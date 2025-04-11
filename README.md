@@ -78,20 +78,20 @@ Om ett fordon implementerar `ICleanable`, anropas `Clean()` i loopen.
 
 ## ⚠️ 🛠️ Att göra / Buggar att åtgärda 🪲
 
-- Direktvalidering i "Lägg till/Uppdatera fordon"
+- Direktvalidering i `AddVehicle` `UpdateVehicle`
 Just nu visas felmeddelanden (t.ex. för kort märke eller ogiltigt årtal) först efter att alla fält har fyllts i.
 Varje fält bör valideras omedelbart, och vid fel bör processen stoppas direkt för att förbättra användarupplevelsen.
 
 - Utlogik i InputHelper
 Nuvarande logik visar inte ett tydligt meddelande som "Press anykey to exit..." efter ett fel.
-Att implementera: en riktig utgångslogik efter ogiltig inmatning, utan att fastna i den oändliga loopen med InvalidInputMessage,
+Att implementera: en riktig utgångslogik efter ogiltig inmatning, utan att fastna i den oändliga loopen med `InvalidInputMessage`,
 vilket just nu tvingar användaren att tvångsavsluta programmet för att kunna avsluta.
 
 - Kodstruktur / organisering
 Program.cs är för "tungt".
 Förslag:
   - Skapa en mapp Utilities eller UserInteraction för menyer och användarinteraktion.
-  - Skapa en separat fil för DemoVehicleActions för att strukturera huvudkoden bättre.
+  - Skapa en separat fil för `DemoVehicleActions` för att strukturera huvudkoden bättre.
 
 -------
 
