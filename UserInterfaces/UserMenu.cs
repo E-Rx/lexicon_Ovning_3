@@ -9,7 +9,7 @@ namespace lexicon_Ovning_3.UserInterfaces
 {
   public class UserMenu
   {
-  static void RunApplication()
+   static void RunApplication()
     {
       VehicleHandler handler = new VehicleHandler();
       VehicleInitializer.CreateInitialVehicles(handler);
@@ -21,23 +21,33 @@ namespace lexicon_Ovning_3.UserInterfaces
 
       while (running)
       {
-        Console.WriteLine("\n=== Vehicle Management System ===");
+        Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("");
+        Console.WriteLine("╔════════════════════════════════════════════╗");
+        Console.WriteLine("║            **  BIENVENUE  **               ║");
+        Console.WriteLine("║        Vehicle Management System           ║");
+        Console.WriteLine("╚════════════════════════════════════════════╝");
+        Console.WriteLine("");
+        Console.ResetColor();
+
+
         Console.WriteLine("1. Show all vehicles");
         Console.WriteLine("2. Add a vehicle");
         Console.WriteLine("3. Update a vehicle");
         Console.WriteLine("4. Possible Error messages");
         Console.WriteLine("5. Demo vehicle actions");
-        Console.WriteLine("0. Exit");
-        Console.Write("Select an option: ");
+        Console.WriteLine("0. ❌ Exit");
+        Console.Write("\nSelect an option: ");
 
         string input = (string)InputHelper.GetValidInput("", typeof(string));
 
         switch (input)
         {
           case "1":
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("\n=== All Vehicles in the System ===");
             Console.WriteLine("");
+            Console.ResetColor();
             handler.ListOfVehicles();
             break;
           case "2":
@@ -61,8 +71,10 @@ namespace lexicon_Ovning_3.UserInterfaces
         }
       }
 
-        Console.WriteLine("MERCI! À BIENTÔT!");
-      }
+      Console.ForegroundColor = ConsoleColor.Magenta;
+      Console.WriteLine("\nMERCI 🙂 À BIENTÔT 👋 ");
+      Console.ResetColor();
     }
+  }
 }
  */
