@@ -76,8 +76,8 @@ Om ett fordon implementerar `ICleanable`, anropas `Clean()` i loopen.
 
 ---
 
-##
-⚠️ 🛠️ Att göra / Buggar att åtgärda 🪲
+## ⚠️ 🛠️ Att göra / Buggar att åtgärda 🪲
+
 - Direktvalidering i "Lägg till/Uppdatera fordon"
 Just nu visas felmeddelanden (t.ex. för kort märke eller ogiltigt årtal) först efter att alla fält har fyllts i.
 Varje fält bör valideras omedelbart, och vid fel bör processen stoppas direkt för att förbättra användarupplevelsen.
@@ -90,8 +90,8 @@ vilket just nu tvingar användaren att tvångsavsluta programmet för att kunna 
 - Kodstruktur / organisering
 Program.cs är för "tungt".
 Förslag:
-  -Skapa en mapp Utilities eller UserInteraction för menyer och användarinteraktion.
-  -Skapa en separat fil för DemoVehicleActions för att strukturera huvudkoden bättre.
+  - Skapa en mapp Utilities eller UserInteraction för menyer och användarinteraktion.
+  - Skapa en separat fil för DemoVehicleActions för att strukturera huvudkoden bättre.
 
 -------
 
